@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { postLogin } from "../scripts/apiService";
+import { postLogin } from "../scripts/apiServiceLogin";
 import "../assets/styles/Login.css";
 
 function Login({onLogin}){

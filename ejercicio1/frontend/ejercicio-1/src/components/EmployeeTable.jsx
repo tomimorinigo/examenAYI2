@@ -25,9 +25,9 @@ function EmployeeTable({ empleados, openModal, handleDelete }) {
             <td>{empleado.sucursal}</td>
             <td>{empleado.antiguedadAnios}</td>
             <td id="last-td">
-              <button onClick={() => openModal(empleado)}>Editar</button>
-              <button id="delete" onClick={() => handleDelete(empleado.legajo)}>
-                Eliminar
+              <button className="button" onClick={() => openModal(empleado)}><i class="fa-solid fa-pen"></i></button>
+              <button className="button" id="delete" onClick={() => handleDelete(empleado.legajo)}>
+                <i class="fa-solid fa-trash"></i>
               </button>
             </td>
           </tr>

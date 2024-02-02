@@ -1,4 +1,4 @@
-package com.tomasmorinigo.ejercicio1.services;
+package com.tomasmorinigo.ejercicio1.services.empleado;
 
 import java.util.ArrayList;
 

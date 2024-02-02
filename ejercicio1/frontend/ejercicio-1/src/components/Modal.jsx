@@ -38,7 +38,7 @@ const Modal = ({ isOpen, onClose, onSave, selectedEmpleado }) => {
   // Efecto para cargar los datos del empleado seleccionado a modificar
   useEffect(() => {
     if (selectedEmpleado) {
-      setLegajo(selectedEmpleado.legajo.toString());
+      setLegajo(selectedEmpleado.legajo); // Ver si va el toString o no
       setNombreEmpleado(selectedEmpleado.nombreEmpleado);
       setApellidoEmpleado(selectedEmpleado.apellidoEmpleado);
       setCargo(selectedEmpleado.cargo);

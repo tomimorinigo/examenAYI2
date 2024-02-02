@@ -5,7 +5,7 @@ import {
   getEmpleados,
   postNewEmpleado,
   updateEmpleado,
-} from "../scripts/apiService";
+} from "../scripts/apiServiceEmployee";
 import EmployeeTable from "./EmployeeTable";
 import "../assets/styles/EmployeeComponent.css";
 

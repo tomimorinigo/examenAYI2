@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-Ejercicio2Application<ejercicio2>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.tomasmorinigo.ejercicio2.Ejercicio2Application",
+            "projectName": "ejercicio2",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

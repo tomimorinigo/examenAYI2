@@ -1,11 +1,11 @@
-package com.tomasmorinigo.ejercicio1.services;
+package com.tomasmorinigo.ejercicio2.services.usuario;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.tomasmorinigo.ejercicio1.persistence.entities.Usuario;
-import com.tomasmorinigo.ejercicio1.persistence.repositories.UsuarioRepository;
+import com.tomasmorinigo.ejercicio2.persistence.entities.Usuario;
+import com.tomasmorinigo.ejercicio2.persistence.repositories.UsuarioRepository;
 
 @Service
 public class UsuarioServiceImp implements UsuarioService{
