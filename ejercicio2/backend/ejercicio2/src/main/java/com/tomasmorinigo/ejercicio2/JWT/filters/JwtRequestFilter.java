@@ -1,4 +1,4 @@
-package com.tomasmorinigo.ejercicio1.config.filters;
+package com.tomasmorinigo.ejercicio2.JWT.filters;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -14,7 +14,7 @@ import org.springframework.security.web.authentication.WebAuthenticationDetailsS
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
-import com.tomasmorinigo.ejercicio1.JWT.service.JwtUtilService;
+import com.tomasmorinigo.ejercicio2.JWT.service.JwtUtilService;
 
 @Component
 public class JwtRequestFilter extends OncePerRequestFilter {

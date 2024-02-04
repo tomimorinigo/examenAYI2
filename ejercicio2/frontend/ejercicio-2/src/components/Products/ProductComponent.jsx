@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import "../../assets/styles/Component.css";
 import ProductModal from "./ProductModal";
 import ProductTable from "./ProductTable";
-import { getAllProductos, postNewProducto, updateProducto, deleteProducto } from "../../scripts/apiServiceProducts";
+import { getAllProductos, postNewProducto, updateProducto, deleteProducto } from "../../services/apiServiceProducts";
 
 function ProductComponent({ title }) {
   const [productos, setProductos] = useState([]);

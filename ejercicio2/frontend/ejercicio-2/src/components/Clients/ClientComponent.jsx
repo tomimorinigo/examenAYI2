@@ -7,7 +7,7 @@ import {
   postNewCliente,
   updateCliente,
   deleteCliente,
-} from "../../scripts/apiServiceClients";
+} from "../../services/apiServiceClients";
 
 function ClientComponent({title}) {
   const [clientes, setClientes] = useState([]);

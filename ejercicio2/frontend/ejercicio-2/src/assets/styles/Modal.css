@@ -19,7 +19,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
 .modal-content {
@@ -27,7 +26,6 @@
   padding: 20px;
   border-radius: 5px;
   width: 550px;
-  height: 80vh;
 }
 
 .close {
@@ -52,7 +50,7 @@
 }
 
 .modal-content form{
-  height: 90%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -87,7 +85,6 @@
 
 .modal-content div input:disabled{
   background-color: #ccc;
-
 }
 
 .modal-content div input:focus{
@@ -111,4 +108,22 @@
 
 .modal-content button:hover{
   background-color: #555;
+}
+
+@media screen and (max-height: 750px){
+  .modal {
+    align-items: flex-start;
+  }
+
+  .modal-content {
+    max-height: calc(100% - 20px);
+    overflow-y: auto;
+  }
+}
+
+@media screen and (max-height: 1000px){
+  .product-modal{
+    max-height: calc(100% - 50px);
+    overflow-y: auto;
+  }
 }

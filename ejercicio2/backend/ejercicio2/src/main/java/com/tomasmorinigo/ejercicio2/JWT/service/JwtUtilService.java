@@ -1,4 +1,4 @@
-package com.tomasmorinigo.ejercicio1.JWT.service;
+package com.tomasmorinigo.ejercicio2.JWT.service;
 
 import java.util.Date;
 import java.util.HashMap;

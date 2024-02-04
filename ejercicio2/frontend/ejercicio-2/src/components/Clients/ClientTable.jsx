@@ -25,8 +25,12 @@ function ClientTable({clientes, openModal, handleDelete}){
                 <td>{cliente.domicilio}</td>
                 <td>{cliente.telefono}</td>
                 <td id="last-td">
-                    <button onClick={() => openModal(cliente)}>Editar</button>
-                    <button id="delete" onClick={() => handleDelete(cliente.idCliente)}>Eliminar</button>
+                    <button className="button" onClick={() => openModal(cliente)}>
+                    <i className="fa-solid fa-pen"></i>
+                    </button>
+                    <button className="button" id="delete" onClick={() => handleDelete(cliente.idCliente)}>
+                    <i className="fa-solid fa-trash"></i>
+                    </button>
                 </td>
               </tr>
             ))}

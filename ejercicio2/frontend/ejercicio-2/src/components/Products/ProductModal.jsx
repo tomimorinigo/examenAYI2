@@ -32,6 +32,20 @@ function ProductModal({ isOpen, onClose, onSave, selectedProducto }){
     }
   };
 
+  const handleCodigoEan = (e) => {
+    const regex = /^\d*$/; // Acepta solo números enteros
+    if (regex.test(e.target.value) || e.target.value === "") {
+      setCodigoEan(e.target.value);
+    }
+  };
+
+  const handleStock = (e) => {
+    const regex = /^\d*$/; // Acepta solo números enteros
+    if (regex.test(e.target.value) || e.target.value === "") {
+      setStock(e.target.value);
+    }
+  };
+
   const handleSave = (e) => {
     e.preventDefault();
     onSave({
@@ -65,7 +79,7 @@ function ProductModal({ isOpen, onClose, onSave, selectedProducto }){
   // Renderizado del componente
   return (
     <div className={`modal ${isOpen ? "open" : ""}`}>
-      <div className="modal-content">
+      <div className="modal-content product-modal">
         <span
           className="close"
           onClick={() => {
@@ -78,6 +92,7 @@ function ProductModal({ isOpen, onClose, onSave, selectedProducto }){
         <h2>Datos del Producto</h2>
         <form onSubmit={handleSave}>
           <div>
+            <label>PLU</label>
             <input
               type="text"
               value={idProducto}
@@ -86,16 +101,18 @@ function ProductModal({ isOpen, onClose, onSave, selectedProducto }){
             />
           </div>
           <div>
+            <label>Codigo EAN</label>
             <input
               type="text"
               value={codigoEan}
-              onChange={(e) => setCodigoEan(e.target.value)}
+              onChange={handleCodigoEan}
               required
               maxLength={25}
               placeholder="Codigo EAN"
             />
           </div>
           <div>
+            <label>Nombre</label>
             <input
               type="text"
               value={nombreProducto}
@@ -106,6 +123,7 @@ function ProductModal({ isOpen, onClose, onSave, selectedProducto }){
             />
           </div>
           <div>
+            <label>Descripcion</label>
             <input
               type="text"
               value={descripcionProducto}
@@ -116,6 +134,7 @@ function ProductModal({ isOpen, onClose, onSave, selectedProducto }){
             />
           </div>
           <div>
+            <label>Tipo</label>
             <input
               type="text"
               value={tipo}
@@ -126,6 +145,7 @@ function ProductModal({ isOpen, onClose, onSave, selectedProducto }){
             />
           </div>
           <div>
+            <label>Marca</label>
             <input
               type="text"
               value={marca}
@@ -136,6 +156,7 @@ function ProductModal({ isOpen, onClose, onSave, selectedProducto }){
             />
           </div>
           <div>
+            <label>Precio</label>
             <input
               type="number"
               value={precio}
@@ -145,10 +166,11 @@ function ProductModal({ isOpen, onClose, onSave, selectedProducto }){
             />
           </div>
           <div>
+            <label>Stock</label>
             <input
-              type="number"
+              type="text"
               value={stock}
-              onChange={(e) => setStock(e.target.value)}
+              onChange={handleStock}
               required
               placeholder="Stock"
             />

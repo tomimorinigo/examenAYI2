@@ -14,19 +14,19 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #ff0000; 
+  background-color: #ff0000;
   border: none;
-  padding: 8px; 
+  padding: 8px;
   cursor: pointer;
   overflow: hidden;
-  transition: all 0.3s ease; 
+  transition: all 0.3s ease;
   color: #fff;
   border-radius: 10px;
 }
 
 .logout-button i {
   z-index: 2;
-    font-size: 32px;
+  font-size: 32px;
 }
 
 .logout-button p {
@@ -35,14 +35,14 @@ body {
   right: -40px;
   margin: 0;
   padding: 8px;
-  background-color: #ff0000; /* Color de fondo al hacer hover */
+  background-color: #ff0000;
   opacity: 0;
-  transition: all 0.3s ease-in-out; /* Agrega una transición a todos los cambios */
+  transition: all 0.3s ease-in-out;
   font-size: 14px;
 }
 
 .logout-button:hover {
-  padding-right: 100px; /* Ajusta la cantidad de expansión al hacer hover */
+  padding-right: 100px;
 }
 
 .logout-button:hover p {

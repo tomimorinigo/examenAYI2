@@ -2,7 +2,6 @@ import "../assets/styles/Modal.css";
 import { useState, useEffect } from "react";
 
 const Modal = ({ isOpen, onClose, onSave, selectedEmpleado }) => {
-  
   // Estados del formulario
   const [legajo, setLegajo] = useState("");
   const [nombreEmpleado, setNombreEmpleado] = useState("");

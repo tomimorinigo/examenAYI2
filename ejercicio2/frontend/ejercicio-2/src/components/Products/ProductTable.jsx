@@ -1,6 +1,7 @@
 import "../../assets/styles/Table.css";
 
 function ProductTable({productos, openModal, handleDelete}){
+    // Tabla que muestra los productos
     return(
         <table className="table">
           <thead>
@@ -28,8 +29,12 @@ function ProductTable({productos, openModal, handleDelete}){
                 <td>{producto.precio}</td>
                 <td>{producto.stock}</td>
                 <td id="last-td">
-                    <button onClick={() => openModal(producto)}>Editar</button>
-                    <button id="delete" onClick={() => handleDelete(producto.idProducto)}>Eliminar</button>
+                    <button className="button" onClick={() => openModal(producto)}>
+                      <i className="fa-solid fa-pen"></i>
+                    </button>
+                    <button className="button" id="delete" onClick={() => handleDelete(producto.idProducto)}>
+                      <i className="fa-solid fa-trash"></i>
+                    </button>
                 </td>
               </tr>
             ))}

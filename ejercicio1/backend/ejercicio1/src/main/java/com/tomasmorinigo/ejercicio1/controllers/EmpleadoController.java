@@ -27,6 +27,11 @@ public class EmpleadoController {
         return empleadoService.getAllEmpleados();
     }
 
+    @GetMapping("/legajo-exists/{legajo}")
+    public boolean existsEmpleadoByLegajo(@PathVariable Integer legajo){
+        return empleadoService.existsEmpleadoByLegajo(legajo);
+    }
+
     @PostMapping("/save")
     public void saveEmpleado(@RequestBody Empleado empleado){
         empleadoService.saveEmpleado(empleado);
@@ -35,11 +40,6 @@ public class EmpleadoController {
     @PutMapping("/update")
     public void updateEmpleado(@RequestBody Empleado empleado){
         empleadoService.saveEmpleado(empleado);
-    }
-
-    @GetMapping("/legajo-exists/{legajo}")
-    public boolean existsEmpleadoByLegajo(@PathVariable Integer legajo){
-        return empleadoService.existsEmpleadoByLegajo(legajo);
     }
 
     @DeleteMapping("/delete/{legajo}")

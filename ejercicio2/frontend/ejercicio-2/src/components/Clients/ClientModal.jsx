@@ -61,6 +61,7 @@ function ClientModal({ isOpen, onClose, onSave, selectedCliente }) {
         <h2>Datos del Cliente</h2>
         <form onSubmit={handleSave}>
           <div>
+            <label>Id</label>
             <input
               type="text"
               value={idCliente}
@@ -69,6 +70,7 @@ function ClientModal({ isOpen, onClose, onSave, selectedCliente }) {
             />
           </div>
           <div>
+            <label>Nombre</label>
             <input
               type="text"
               value={nombreCliente}
@@ -79,6 +81,7 @@ function ClientModal({ isOpen, onClose, onSave, selectedCliente }) {
             />
           </div>
           <div>
+            <label>Apellido</label>
             <input
               type="text"
               value={apellidoCliente}
@@ -89,6 +92,7 @@ function ClientModal({ isOpen, onClose, onSave, selectedCliente }) {
             />
           </div>
           <div>
+            <label>Fecha de Ingreso</label>
             <input
               type="text"
               value={fechaIngreso}
@@ -99,6 +103,7 @@ function ClientModal({ isOpen, onClose, onSave, selectedCliente }) {
             />
           </div>
           <div>
+            <label>Domicilio</label>
             <input
               type="text"
               value={domicilio}
@@ -109,6 +114,7 @@ function ClientModal({ isOpen, onClose, onSave, selectedCliente }) {
             />
           </div>
           <div>
+            <label>Telefono</label>
             <input
               type="text"
               pattern="[0-9]*"

@@ -22,16 +22,19 @@ public class EmpleadoServiceImp implements EmpleadoService{
     }
 
     @Override
+    @Transactional
     public void saveEmpleado(Empleado empleado) {
         empleadoRepository.save(empleado);
     }
 
     @Override
+    @Transactional
     public void deleteEmpleadoByLegajo(Integer legajo) {
         empleadoRepository.deleteById(legajo);
     }
 
     @Override
+    @Transactional(readOnly = true)
     public boolean existsEmpleadoByLegajo(Integer nuevoLegajo) {
         return empleadoRepository.existsById(nuevoLegajo);
     }

@@ -1,23 +1,12 @@
 import axios from "axios";
+import { getToken, handleApiError } from "../scripts/handlingAuth";
 
 const baseURLAPI = "http://localhost:8080/api/empleados";
 
-const getToken = () => {
-  return localStorage.getItem("jwtToken");
-};
-
-const handleApiError = (error) => {
-  if (error.response && error.response.status === 403) {
-    alert("Error 403: Acceso no autorizado");
-  } else {
-    console.error("Error al comunicarse con la API", error);
-  }
-};
-
+// Obtiene la lista de empleados desde la API
 const getEmpleados = async ({ setEmpleados }) => {
   try {
-    const response = await axios.get(`${baseURLAPI}/all`, 
-    {
+    const response = await axios.get(`${baseURLAPI}/all`, {
       headers: {
         Authorization: `Bearer ${getToken()}`,
       },
@@ -29,6 +18,7 @@ const getEmpleados = async ({ setEmpleados }) => {
   }
 };
 
+// Envia un nuevo empleado a la API
 const postNewEmpleado = async (data, { setEmpleados }) => {
   const nuevoLegajo = parseInt(data.legajo);
   const legajoEnUso = await verificarLegajo(nuevoLegajo);
@@ -39,8 +29,7 @@ const postNewEmpleado = async (data, { setEmpleados }) => {
   } else {
     console.log(data);
     try {
-      const response = await axios.post(`${baseURLAPI}/save`, data, 
-      {
+      const response = await axios.post(`${baseURLAPI}/save`, data, {
         headers: {
           Authorization: `Bearer ${getToken()}`,
         },
@@ -54,10 +43,10 @@ const postNewEmpleado = async (data, { setEmpleados }) => {
   }
 };
 
+// Verifica si un legajo ya se encuentra en uso
 const verificarLegajo = async (legajo) => {
   try {
-    const response = await axios.get(`${baseURLAPI}/legajo-exists/${legajo}`, 
-    {
+    const response = await axios.get(`${baseURLAPI}/legajo-exists/${legajo}`, {
       headers: {
         Authorization: `Bearer ${getToken()}`,
       },
@@ -69,10 +58,10 @@ const verificarLegajo = async (legajo) => {
   }
 };
 
+// Actualiza un empleado en la API
 const updateEmpleado = async (data, { setEmpleados }) => {
   try {
-    const response = await axios.put(`${baseURLAPI}/update`, data, 
-    {
+    const response = await axios.put(`${baseURLAPI}/update`, data, {
       headers: {
         Authorization: `Bearer ${getToken()}`,
       },
@@ -85,16 +74,14 @@ const updateEmpleado = async (data, { setEmpleados }) => {
   }
 };
 
+// Elimina un empleado de la API
 const deleteEmpleado = async (legajo, { setEmpleados }) => {
   try {
-    const response = await axios.delete(
-      `${baseURLAPI}/delete/${legajo}`,
-      {
-        headers: {
-          Authorization: `Bearer ${getToken()}`,
-        },
-      }
-    );
+    const response = await axios.delete(`${baseURLAPI}/delete/${legajo}`, {
+      headers: {
+        Authorization: `Bearer ${getToken()}`,
+      },
+    });
 
     console.log(response);
     getEmpleados({ setEmpleados });

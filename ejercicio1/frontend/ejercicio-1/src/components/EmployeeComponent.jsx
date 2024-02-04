@@ -5,7 +5,7 @@ import {
   getEmpleados,
   postNewEmpleado,
   updateEmpleado,
-} from "../scripts/apiServiceEmployee";
+} from "../services/apiServiceEmployee";
 import EmployeeTable from "./EmployeeTable";
 import "../assets/styles/EmployeeComponent.css";
 
@@ -16,7 +16,7 @@ function EmployeeComponent({ title }) {
 
   // Efecto para cargar los empleados al montar el componente
   useEffect(() => {
-    getEmpleados({setEmpleados});
+    getEmpleados({ setEmpleados });
   }, []);
 
   // Funciones para abrir, cerrar y guardar el modal
@@ -32,20 +32,22 @@ function EmployeeComponent({ title }) {
   const handleModalSave = (data) => {
     if (selectedEmpleado) {
       data.legajo = selectedEmpleado.legajo;
-      updateEmpleado(data, {setEmpleados});
+      updateEmpleado(data, { setEmpleados });
     } else {
-      postNewEmpleado(data, {setEmpleados});
+      postNewEmpleado(data, { setEmpleados });
     }
     closeModal();
   };
 
-  // Función para eliminar un empleado
+  // Función para manejar la eliminacion un empleado
   const handleDelete = (legajo) => {
-    const confirmed = window.confirm("¿Está seguro que desea eliminar el empleado?");
+    const confirmed = window.confirm(
+      "¿Está seguro que desea eliminar el empleado?"
+    );
     if (!confirmed) return;
-    
+
     console.log("Empleado a eliminar: ", legajo);
-    deleteEmpleado(legajo, {setEmpleados});
+    deleteEmpleado(legajo, { setEmpleados });
   };
 
   return (
@@ -71,7 +73,7 @@ function EmployeeComponent({ title }) {
       >
         Nuevo
       </button>
-        
+
       <Modal
         isOpen={isModalOpen}
         onClose={closeModal}
